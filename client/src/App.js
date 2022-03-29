@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import './App.css';
 import Calendar from "./pages/Dashboard/Calendar";
+import Classes from "./pages/Dashboard/Classes";
 import Dashboard from './pages/Dashboard/Dashboard';
 import Notification from './pages/Dashboard/Notification';
 import Students from './pages/Dashboard/Students';
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <Routes>
       <Route path="/" element={<Dashboard />} >
+        <Route path="classes" element={<Classes />} />
         <Route path="teachers" element={<Teachers />} />
         <Route path="students" element={<Students />} />
         <Route path="calendar" element={<Calendar />} />

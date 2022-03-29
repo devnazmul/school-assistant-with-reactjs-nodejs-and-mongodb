@@ -4,3 +4,18 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.main-menu-btn1::after,
+.main-menu-btn2::after,
+.main-menu-btn3::after,
+.main-menu-btn4::after,
+.main-menu-btn5::after {
+  content: "";
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  top: 0;
+  left: -27%;
+  transform: rotate(45deg);
+  border-radius: 30%;
+  background-color: rgb(221, 254, 255);
+}

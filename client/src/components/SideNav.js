@@ -8,11 +8,12 @@ import SingleNavLinkButton from './SingleNavLinkButton';
 
 export default function SideNav({logoSrc,navImageSrc,appName,menuName}) {
     return (
-        <nav className='px-5 py-3'>
-            <div className='w-full flex mb-5 justify-between items-center  text-xl  font-medium text-white'>
-                <img className='w-12' src={logoSrc} alt="" /> {appName}
+        <nav className='px-2 lg:px-5 py-3 overflow-hidden'>
+            <div className='w-full flex mb-5 justify-center lg:justify-between items-center  text-xl  font-medium text-white'>
+                <img className='w-12' src={logoSrc} alt="" /> 
+                <span className='hidden lg:block '>{appName}</span> 
             </div>
-            <h2 className='text-white text-lg font-semibold mb-5'>{menuName}</h2>
+            <h2 className='text-white text-center lg:text-left text-sm lg:text-lg font-semibold mb-5'>{menuName}</h2>
             <ul>
                 <li className='mb-5 relative'>
                     <SingleNavLinkButton to={'/'} Icon={AiOutlineAppstore} title='Dashboard' btnNo={'1'} />
@@ -32,8 +33,8 @@ export default function SideNav({logoSrc,navImageSrc,appName,menuName}) {
                 
             </ul>
             <div className='bottom-0  flex justify-center flex-col relative items-center  w-full '>
-                <img className='w-4/5 h-auto ' src={navImageSrc} alt="" />
-                <h1 className='text-xs text-white font-mono'>
+                <img className='w-4/5 lg:w-3/5 h-auto ' src={navImageSrc} alt="" />
+                <h1 className='text-xs text-center text-white font-mono'>
                     A School Management System
                 </h1>
             </div>

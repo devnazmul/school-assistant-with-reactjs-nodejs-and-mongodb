@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.main-menu-btn1::after,
+/* .main-menu-btn1::after,
 .main-menu-btn2::after,
 .main-menu-btn3::after,
 .main-menu-btn4::after,
@@ -18,4 +18,4 @@
   transform: rotate(45deg);
   border-radius: 30%;
   background-color: rgb(221, 254, 255);
-}
+} */

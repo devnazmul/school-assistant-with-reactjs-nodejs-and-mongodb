@@ -26,7 +26,7 @@ export default function Dashboard() {
 
                 <div className='bg-white h-full w-10/12'>
                     <TopNav />
-                    <div className='w-full h-full pl-7 pr-4 py-2 bg-slate-100  overflow-y-scroll'>
+                    <div className='w-full h-screen pl-7 pb-32 pr-4 py-2 bg-slate-100  overflow-y-scroll  scrollbar-thin scrollbar-thumb-grad-to scrollbar-track-gray-100'>
                         <Routes>
                             <Route path="/" element={<Main />} />
                             <Route path="/teachers" element={<Teachers />} />

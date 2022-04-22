@@ -1,7 +1,7 @@
 import React from 'react'
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
 
-export default function FinanceChart({isLoading,data}) {
+export default function FinanceChart({ isLoading, data }) {
     return (
         <>
             {!isLoading ? (
@@ -35,11 +35,18 @@ export default function FinanceChart({isLoading,data}) {
                             margin={0}
                             data={data}
                         >
-                            
 
                             <CartesianGrid strokeDasharray="3 3" />
                             <Legend />
-                            <Tooltip />
+                            <Tooltip
+
+                                wrapperStyle={{
+                                    backgroundColor: 'aqua'
+                                }}
+                                itemStyle={{
+                                    backgroundColor: 'red'
+                                }}
+                            />
                             <YAxis dataKey={'range'} />
                             <XAxis dataKey={'days'} interval="preserveEnd" />
                             <Area type="monotone" stackId="1" dataKey="income" stroke="#F49121FF" strokeWidth={5} fill="transparent" />

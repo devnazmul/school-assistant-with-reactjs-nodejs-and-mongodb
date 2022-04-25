@@ -12,7 +12,7 @@ export default function Students() {
         <div className='flex justify-between items-center mb-4'>
           <div>
             <h1 className='text-2xl font-semibold'>Students Database</h1>
-            <p className='font-mono text-xs'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <p title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' className='text-gray-400 text-xs truncate '>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className='flex justify-center items-center'>
             <button className='flex justify-center items-center bg-white shadow-lg rounded-md w-20 py-2 mr-5'><TiFilter className='mr-1' />Filter</button>

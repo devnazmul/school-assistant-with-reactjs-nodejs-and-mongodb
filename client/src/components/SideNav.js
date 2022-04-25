@@ -28,7 +28,7 @@ export default function SideNav({logoSrc,navImageSrc,appName,menuName}) {
                     <SingleNavLinkButton to={`/teachers`} Icon={FaChalkboardTeacher} title='Teachers' btnNo={'2'} />
                 </li>
                 <li className='mb-5 relative'>
-                    <SingleNavLinkButton to={`/calendar`} Icon={BiCalendar} title='Calendar' btnNo={'4'} />
+                    <SingleNavLinkButton to={`/calandar`} Icon={BiCalendar} title='Calendar' btnNo={'4'} />
                 </li>
                 
             </ul>

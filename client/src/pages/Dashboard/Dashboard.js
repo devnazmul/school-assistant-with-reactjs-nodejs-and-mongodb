@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import SideNav from '../../components/SideNav';
 import TopNav from '../../components/TopNav';
-import Calendar from './Calendar';
+import Calandar from './Calandar';
 import Classes from './Classes';
 import Main from './Main';
 import Notification from './Notification';
@@ -31,7 +31,7 @@ export default function Dashboard() {
                             <Route path="/" element={<Main />} />
                             <Route path="/teachers" element={<Teachers />} />
                             <Route path="/students" element={<Students />} />
-                            <Route path="/calendar" element={<Calendar />} />
+                            <Route path="/calandar" element={<Calandar />} />
                             <Route path="/classes" element={<Classes />} />
                             <Route path="/user_profile" element={<UserProfile />} />
                             <Route path="/notification" element={<Notification />} />

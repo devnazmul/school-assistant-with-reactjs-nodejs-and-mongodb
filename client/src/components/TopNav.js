@@ -6,7 +6,7 @@ export default function TopNav() {
     return (
         <div className='w-full flex justify-center items-center px-2 md:px-5 shadow-md h-16'>
             <div className='w-8/12 sm:w-9/12 md:w-6/12 pr-3 md:pr-10'>
-                <input className='border-2 w-full rounded-full h-full px-2 py-1 flex justify-center items-center border-purple-200 active:border-purple-500 focus:border-purple-500' placeholder='search' type="text" />
+                <input className='focus:outline-none border-2 w-full rounded-full h-full px-2 py-1 flex justify-center items-center border-purple-200 active:border-purple-500 focus:border-purple-500' placeholder='search' type="text" />
             </div>
             <div className='w-4/12 sm:w-3/12 md:w-6/12 flex items-center h-full justify-end'>
                 <NavLink

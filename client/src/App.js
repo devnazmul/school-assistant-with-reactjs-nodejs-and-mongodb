@@ -2,7 +2,7 @@ import {
   Route, Routes
 } from "react-router-dom";
 import './App.css';
-import Calendar from "./pages/Dashboard/Calendar";
+import Calandar from "./pages/Dashboard/Calandar";
 import Classes from "./pages/Dashboard/Classes";
 import Dashboard from './pages/Dashboard/Dashboard';
 import Notification from './pages/Dashboard/Notification';
@@ -19,7 +19,7 @@ function App() {
         <Route path="classes" element={<Classes />} />
         <Route path="teachers" element={<Teachers />} />
         <Route path="students" element={<Students />} />
-        <Route path="calendar" element={<Calendar />} />
+        <Route path="calandar" element={<Calandar />} />
         <Route path="user_profile" element={<UserProfile />} />
         <Route path="notification" element={<Notification />} />
         

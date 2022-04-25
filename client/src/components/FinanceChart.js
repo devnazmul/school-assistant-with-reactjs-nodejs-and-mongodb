@@ -39,13 +39,10 @@ export default function FinanceChart({ isLoading, data }) {
                             <CartesianGrid strokeDasharray="3 3" />
                             <Legend />
                             <Tooltip
-
-                                wrapperStyle={{
-                                    backgroundColor: 'aqua'
-                                }}
                                 itemStyle={{
-                                    backgroundColor: 'red'
+                                    backgroundColor: 'white'
                                 }}
+                                viewBox={{ x: 0, y: 0, width: 200, height: 400 }}
                             />
                             <YAxis dataKey={'range'} />
                             <XAxis dataKey={'days'} interval="preserveEnd" />

@@ -11,7 +11,7 @@ export default function Students() {
       <div className='w-9/12 pr-5'>
         <div className='flex justify-between items-center mb-4'>
           <div>
-            <h1 className='text-2xl font-semibold'>Students Database</h1>
+          <h1 className='text-2xl font-bold'>Students Database</h1>
             <p title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' className='text-gray-400 text-xs truncate '>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className='flex justify-center items-center'>

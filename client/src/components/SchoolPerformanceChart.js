@@ -1,5 +1,6 @@
 import React from 'react';
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import CustomTooltipForStudents from './RechartTooltip/CustomTooltipForStudents';
 export default function SchoolPerformanceChart({ isLoading, data }) {
 
     return (
@@ -48,7 +49,9 @@ export default function SchoolPerformanceChart({ isLoading, data }) {
 
                             <CartesianGrid strokeDasharray="3 3" />
                             <Legend />
-                            <Tooltip />
+                            <Tooltip
+                                content={<CustomTooltipForStudents />}
+                            />
                             <YAxis dataKey={'value'} />
                             <XAxis dataKey={'y'} interval="preserveEnd" />
                             <Area type="monotone" stackId="1" dataKey="students" stroke="#8c4af2" strokeWidth={5} fill="url(#colorStudents)" />

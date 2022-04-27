@@ -1,5 +1,6 @@
 import React from 'react'
 import { Area, AreaChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts'
+import CustomTooltipForSchoolFinance from './RechartTooltip/CustomTooltipForSchoolFinance'
 
 export default function FinanceChart({ isLoading, data }) {
     return (
@@ -39,15 +40,13 @@ export default function FinanceChart({ isLoading, data }) {
                             <CartesianGrid strokeDasharray="3 3" />
                             <Legend />
                             <Tooltip
-                                itemStyle={{
-                                    backgroundColor: 'white'
-                                }}
-                                viewBox={{ x: 0, y: 0, width: 200, height: 400 }}
+                            labelClassName='tooltipLabel'
+                            content={<CustomTooltipForSchoolFinance />}
                             />
                             <YAxis dataKey={'range'} />
                             <XAxis dataKey={'days'} interval="preserveEnd" />
-                            <Area type="monotone" stackId="1" dataKey="income" stroke="#F49121FF" strokeWidth={5} fill="transparent" />
-                            <Area type={'monotone'} stackId="1" dataKey="expance" strokeWidth={5} stroke='#1ACB81FF' fill="transparent" />
+                            <Area type="monotone" stackId="1" dataKey="income" stroke='#1ACB81FF' strokeWidth={5} fill="transparent" />
+                            <Area type={'monotone'} stackId="1" dataKey="expance" strokeWidth={5} stroke="#F49121FF" fill="transparent" />
                         </AreaChart>
                     </ResponsiveContainer>
                     {console.log(data)}

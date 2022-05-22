@@ -6,10 +6,10 @@ export default function SchoolPerformanceChart({ isLoading, data }) {
     return (
         <>
             {!isLoading ? (
-                <div className='w-full md:w-8/12 h-96 bg-white pt-5 pb-20 px-5 rounded-md shadow-md my-3 mr-3'>
+                <div className='w-full md:w-8/12 h-96 bg-white pt-5 pb-14 pr-5 rounded-md shadow-md my-3 mr-3'>
                     <div className='flex justify-between items-center mb-5'>
                         <div className='w-6/12'>
-                            <h1 className='text-md font-bold'>School Performance</h1>
+                            <h1 className='text-md font-bold ml-5'>School Performance</h1>
                         </div>
                         <div className='w-6/12 lg:flex hidden justify-between items-center'>
                             <div>
@@ -48,14 +48,14 @@ export default function SchoolPerformanceChart({ isLoading, data }) {
                             </defs>
 
                             <CartesianGrid strokeDasharray="3 3" />
-                            <Legend />
+                            <Legend  iconType="circle" />
                             <Tooltip
                                 content={<CustomTooltipForStudents />}
                             />
-                            <YAxis dataKey={'value'} />
+                            <YAxis domain={[0,2000]} dataKey={'value'} />
                             <XAxis dataKey={'y'} interval="preserveEnd" />
-                            <Area type="monotone" stackId="1" dataKey="students" stroke="#8c4af2" strokeWidth={5} fill="url(#colorStudents)" />
-                            <Area type={'monotone'} stackId="1" dataKey="teachers" strokeWidth={5} stroke='#32B899FF' fill="url(#colorTeachers)" />
+                            <Area activeDot={{r:9}} type="monotone" stackId="1" dataKey="students" stroke="#8c4af2" strokeWidth={5} fill="url(#colorStudents)" />
+                            <Area activeDot={{r:9}} type={'monotone'} stackId="1" dataKey="teachers" strokeWidth={5} stroke='#32B899FF' fill="url(#colorTeachers)" />
                         </AreaChart>
                     </ResponsiveContainer>
                     {console.log(data)}

@@ -13,18 +13,19 @@ const registration = async (req, res) => {
             req.body.password,
             10,
             async (err, hash) => {
-                
-                await User.create({
-                    full_name: req.body.fullName,
-                    username: req.body.username,
-                    email: req.body.email,
-                    profile_pic_url: req.body?.profilePicUrl,
-                    // png_profile_pic_url: req.body?.pngProfilePicUrl,
-                    password: hash
-                });
-
-                console.log('success!');
-                res.send('success!');
+                if (err) {
+                    throw err;
+                } else {
+                    await User.create({
+                        full_name: req.body.fullName,
+                        username: req.body.username,
+                        email: req.body.email,
+                        profile_pic_url: (req.body?.profilePicUrl ? req.body.profilePicUrl : 'https://engineering.unl.edu/images/staff/Kayla-Person.jpg'),
+                        password: hash
+                    });
+                    console.log('success!');
+                    res.send('success!');
+                }
             })
     } else {
         // ######################################
@@ -35,7 +36,7 @@ const registration = async (req, res) => {
 
         //         const url = "https://engineering.unl.edu/images/staff/Kayla-Person.jpg";
         //         const outputFile = `${__dirname}\\out\\img-removed-from-file.png`;
-                
+
         //         removeBackgroundFromImageUrl({
         //           url,
         //           apiKey: process.env.REMOVE_BG_API_KEY,
@@ -48,7 +49,6 @@ const registration = async (req, res) => {
         //         }).catch((RemoveBgError) => {
         //          console.log(JSON.stringify(RemoveBgError));
         //         });
-
         res.json({ message: 'user already exist with this email account' });
     }
 

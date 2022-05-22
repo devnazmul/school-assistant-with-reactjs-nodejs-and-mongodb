@@ -14,6 +14,7 @@ export default function Main() {
   const [data2, setData2] = useState([]);
   const [isLoading, setIsLoading] = useState(true)
   const [inc, setInc] = useState(0)
+  
   useEffect(() => {
     if (inc <= 10) {
       setInc(inc + 1)
@@ -21,9 +22,8 @@ export default function Main() {
       {
         'y':inc,
         'date': subDays(new Date(), inc).toISOString().substr(0, 10),
-        'value': Math.floor(1 + Math.random() * 2000),
         'teachers': Math.floor(1 + Math.random() * 1000),
-        'students': Math.floor(1 + Math.random() * 1000)
+        'students': Math.floor(1 + Math.random() * 1100)
       }])
      
 

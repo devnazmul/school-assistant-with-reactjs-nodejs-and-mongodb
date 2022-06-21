@@ -41,7 +41,7 @@ app.listen(PORT, () => {
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING,{ useNewUrlParser: true , useUnifiedTopology: true}).then(()=>{
     colog.info('=======================================================')
-    colog.info('🔌 Database is connected.')
+    colog.info('🤖 Database is connected.')
     colog.info('=======================================================')
 }).catch(err=>{
     colog.error('=======================================================')

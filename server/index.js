@@ -28,6 +28,7 @@ app.use('/api/classes/', routes.classes);
 app.use('/api/school/', routes.school);
 app.use('/api/student/', routes.student);
 app.use('/api/user/', routes.user);
+app.use('/api/teacher/', routes.teacher);
 
 const PORT = process.env.PORT || 8080;
 

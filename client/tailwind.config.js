@@ -5,7 +5,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-
         'chart-students':'#8c4af2',
         'chart-teachers':'#32B899FF',
 

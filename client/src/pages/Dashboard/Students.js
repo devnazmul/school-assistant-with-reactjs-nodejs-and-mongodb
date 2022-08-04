@@ -1,7 +1,7 @@
 import React from 'react'
 import { BsPlus, BsSearch } from 'react-icons/bs'
 import { TiFilter } from 'react-icons/ti'
-import StudentSingleDetails from '../../components/StudentSingleDetails'
+import SingleDetails from '../../components/SingleDetails'
 import StudentSingleDetailsPopup from '../../components/StudentSingleDetailsPopup'
 import StudentsTable from '../../components/StudentsTable'
 
@@ -29,7 +29,7 @@ export default function Students() {
         </div>
         <StudentsTable />
       </div>
-      <StudentSingleDetails />
+      <SingleDetails />
       <StudentSingleDetailsPopup />
     </div>
   )

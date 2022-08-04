@@ -4,9 +4,9 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 
 
-export default function StudentSingleDetails() {
+export default function SingleDetails() {
     return (
-        <div className='hidden lg:block w-0 lg:w-3/12 bg-white shadow-lg rounded-lg px-7 py-4'>
+        <div className='h-full sticky right-0 hidden lg:block w-0 lg:w-3/12 bg-white shadow-lg rounded-lg px-7 py-4'>
             <div className='w-full shadow-lg rounded-md px-5 py-5'>Graph</div>
             <div className='py-10'>
                 <div className='font-semibold'>

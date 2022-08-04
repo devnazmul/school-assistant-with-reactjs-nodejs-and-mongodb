@@ -5,6 +5,15 @@ const test = (req, res) => {
     res.send('test teacher controller.');
 }
 
+const getAll = (req, res) => {
+    Teacher.find({}).then((teachers) => {
+        res.send({
+            status: "Success",
+            data: teachers
+        })
+    })
+
+}
 const create = (req, res) => {
     User.find({ email: req.headers.user_email }, (err, user) => {
         if (!err) {
@@ -19,25 +28,27 @@ const create = (req, res) => {
                         about: req.body.about,
                         date_of_birth: req.body.date_of_birth,
                         password: req.body.password,
-                    }).then((teacher)=>{
+                    }).then((teacher) => {
                         res.send({
-                            data:teacher
+                            status: "Success",
+                            data: teacher
                         })
                     })
-
-
                 } else {
                     res.send({
+                        status: "Failed",
                         message: 'Sorry unable to create teacher!'
                     })
                 }
             } else {
                 res.send({
+                    status: "Failed",
                     message: 'Sorry unable to create teacher!'
                 })
             }
         } else {
             res.send({
+                status: "Failed",
                 message: 'Sorry unable to create teacher!'
             })
         }
@@ -46,5 +57,6 @@ const create = (req, res) => {
 
 module.exports = {
     test,
-    create
+    create,
+    getAll
 };

@@ -4,7 +4,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { Link } from 'react-router-dom'
 export default function StudentSingleDetailsPopup() {
     return (
-        <div id='StudentSingleDetailsPopup' className='block lg:hidden absolute w-full mb-32 bg-white shadow-lg rounded-lg px-7 py-4'>
+        <div id='StudentSingleDetailsPopup' className='hidden lg:hidden absolute w-full mb-32 bg-white shadow-lg rounded-lg px-7 py-4'>
             <button className='absolute right-0 top-0 rounded-full shadow-lg p-1 bg-red-600'><BsX className='text-white' /></button>
             <div className='w-full shadow-lg rounded-md px-5 py-5'>Graph</div>
             <div className='py-10'>

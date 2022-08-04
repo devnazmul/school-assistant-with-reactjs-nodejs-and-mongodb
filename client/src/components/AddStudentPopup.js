@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Fragment, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPopupIsOpen }) {
+export default function AddStudentPopup({ AddTeacherPopupIsOpen, setAddTeacherPopupIsOpen }) {
     const cancelButtonRef = useRef(null)
     const { register, handleSubmit } = useForm(); // initialize the hook
     const onSubmit = (data) => {
@@ -47,7 +47,7 @@ export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPo
                                         <div className="sm:flex sm:items-start">
                                             <div className="mt-3 sm:mt-0 sm:ml-4 text-left">
                                                 <Dialog.Title as="h3" className="text-center  text-lg leading-6 font-medium text-grad-to">
-                                                    Add Teacher
+                                                    Add Student
                                                 </Dialog.Title>
                                                 <div className="mt-2 w-full">
                                                     <span className='text-xs ml-2'> Name <span className='text-red-600'>*</span></span>

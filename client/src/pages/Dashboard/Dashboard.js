@@ -13,20 +13,18 @@ import UserProfile from './UserProfile';
 export default function Dashboard() {
     return (
         <div className=' text-black h-screen md:p-5 bg-gray-200 bg-image'>
-            <div className='h-full w-full flex md:rounded-2xl overflow-hidden shadow-xl' >
-                
-                <div className='w-2/12 h-full bg-gradient-to-t from-grad-from to-grad-to'  >
-                    <SideNav
-                        logoSrc={"https://i.postimg.cc/MK0FTtTw/education.png"}
-                        navImageSrc={"./assets/school.png"}
-                        appName={'School Assist'}
-                        menuName={'Main Menu'}
-                    />
-                </div>
+            <div className='h-full w-full md:flex md:rounded-2xl overflow-hidden shadow-xl' >
 
-                <div className='bg-white h-full w-10/12'>
+                <SideNav
+                    logoSrc={"https://i.postimg.cc/MK0FTtTw/education.png"}
+                    navImageSrc={"./assets/school.png"}
+                    appName={'School Assist'}
+                    menuName={'Main Menu'}
+                />
+
+                <div className='bg-white h-full md:w-10/12 w-full'>
                     <TopNav />
-                    <div className='w-full h-screen pl-7 pb-32 pr-4 py-2 bg-slate-100  overflow-y-scroll  scrollbar-thin scrollbar-thumb-grad-to scrollbar-track-gray-100'>
+                    <div className='w-full h-screen pl-4 md:pl-7 pb-32 pr-4 py-2 bg-slate-100 overflow-y-scroll scrollbar-thin scrollbar-thumb-grad-to scrollbar-track-gray-100'>
                         <Routes>
                             <Route path="/" element={<Main />} />
                             <Route path="/teachers" element={<Teachers />} />

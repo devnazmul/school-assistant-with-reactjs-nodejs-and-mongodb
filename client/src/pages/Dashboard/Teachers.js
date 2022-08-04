@@ -17,7 +17,7 @@ export default function Teachers() {
             <p title='Lorem ipsum dolor sit amet consectetur adipisicing elit.' className='text-gray-400 text-xs truncate '>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div className='w-full flex justify-end lg:justify-end mt-5 lg:mt-0'>
-            <div className='flex justify-center items-center relative h-9 shadow-lg rounded-md overflow-hidden text-gray-400 w-1/2'>
+            <div className='flex w-10/12 justify-between items-center relative h-9 shadow-lg rounded-md overflow-hidden text-gray-400'>
               <BsSearch className='absolute left-2 text-sm' />
               <input className='focus:outline-none w-full placeholder-slate-400 h-full pl-7 placeholder:text-md focus:border-red-600' type="text" placeholder='search here..' />
             </div>

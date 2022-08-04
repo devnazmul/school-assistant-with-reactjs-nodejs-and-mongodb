@@ -23,7 +23,7 @@ export default function Main() {
         'date': subDays(new Date(), inc).toISOString().substr(0, 10),
         'value': Math.floor(1 + Math.random() * 2000),
         'teachers': Math.floor(1 + Math.random() * 1000),
-        'students': Math.floor(1 + Math.random() * 1000)
+        'students': Math.floor(1 + Math.random() * 1100)
       }])
      
 

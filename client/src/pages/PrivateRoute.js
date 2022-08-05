@@ -5,6 +5,8 @@ export default function PrivateRoute({ children, ...rest }) {
     React.useEffect(() => {
         localStorage.getItem('user_info');
     }, [user]);
+
+    
     return (
         <div>PrivateRoute</div>
     )

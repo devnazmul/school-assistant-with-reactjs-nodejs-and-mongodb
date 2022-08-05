@@ -2,7 +2,8 @@ import {
   Route, Routes
 } from "react-router-dom";
 import './App.css';
-import AuthenticationForms from "./pages/Auth/AuthenticationForms";
+import Login from "./pages/Auth/Login";
+import Registration from "./pages/Auth/Registration";
 import Calandar from "./pages/Dashboard/Calandar";
 import Classes from "./pages/Dashboard/Classes";
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -25,7 +26,8 @@ function App() {
         <Route path="user_profile" element={<UserProfile />} />
         <Route path="notification" element={<Notification />} />
       </Route>
-      <Route path="/auth" element={<AuthenticationForms />} />
+      <Route path="/auth/login" element={<Login />} />
+      <Route path="/auth/registration" element={<Registration />} />
     </Routes>
       
     </div>

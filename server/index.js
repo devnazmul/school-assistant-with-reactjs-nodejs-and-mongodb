@@ -22,13 +22,13 @@ app.get('/',(req,res)=>{
     res.send('Walaaa Its working')
 });
 
-app.use('/api/auth/', routes.auth);
-app.use('/api/branch/', routes.branch);
-app.use('/api/classes/', routes.classes);
-app.use('/api/school/', routes.school);
-app.use('/api/student/', routes.student);
-app.use('/api/user/', routes.user);
-app.use('/api/teacher/', routes.teacher);
+app.use('/api/v1/auth', routes.auth);
+app.use('/api/v1/branch', routes.branch);
+app.use('/api/v1/classes', routes.classes);
+app.use('/api/v1/school', routes.school);
+app.use('/api/v1/student', routes.student);
+app.use('/api/v1/user', routes.user);
+app.use('/api/v1/teacher', routes.teacher);
 
 const PORT = process.env.PORT || 8080;
 

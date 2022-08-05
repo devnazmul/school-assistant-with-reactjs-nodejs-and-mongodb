@@ -2,6 +2,7 @@ import {
   Route, Routes
 } from "react-router-dom";
 import './App.css';
+import AuthenticationForms from "./pages/Auth/AuthenticationForms";
 import Calandar from "./pages/Dashboard/Calandar";
 import Classes from "./pages/Dashboard/Classes";
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -15,6 +16,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
+      
       <Route path="/" element={<Dashboard />} >
         <Route path="classes" element={<Classes />} />
         <Route path="teachers" element={<Teachers />} />
@@ -22,8 +24,8 @@ function App() {
         <Route path="calandar" element={<Calandar />} />
         <Route path="user_profile" element={<UserProfile />} />
         <Route path="notification" element={<Notification />} />
-        
       </Route>
+      <Route path="/auth" element={<AuthenticationForms />} />
     </Routes>
       
     </div>

@@ -1,15 +1,28 @@
 import { Dialog, Transition } from '@headlessui/react';
 import axios from 'axios';
-import { Fragment, useRef } from 'react';
+import React, { Fragment, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
-export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPopupIsOpen }) {
+export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPopupIsOpen, monitoringChanges, setMonitoringChanges }) {
     const cancelButtonRef = useRef(null)
-    const { register, handleSubmit } = useForm(); // initialize the hook
+    const { register, handleSubmit } = useForm();
+    const [error, setError] = React.useState([])
+
+
+
     const onSubmit = (data) => {
-        console.log(data);
-        data && axios.post(``, data).then((res) => {
-            console.log(res);
+        data && axios.post(`${process.env.REACT_APP_SERVER_API}/teacher/create`, data, {
+            headers: {
+                user_email: process.env.REACT_APP_SERVER_ADMIN_EMAIL
+            }
+        }).then((res) => {
+
+            if (res.data.data) {
+                monitoringChanges ? setMonitoringChanges(false) : setMonitoringChanges(true);
+                setAddTeacherPopupIsOpen(false)
+            } else {
+                setError(...error, res.data.message)
+            }
         })
         // setAddTeacherPopupIsOpen(false)
 
@@ -51,18 +64,18 @@ export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPo
                                                 </Dialog.Title>
                                                 <div className="mt-2 w-full">
                                                     <span className='text-xs ml-2'> Name <span className='text-red-600'>*</span></span>
-                                                    <input placeholder='Name' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='name' type="text" {...register("name", { required: true })} />
+                                                    <input defaultValue={''} placeholder='Name' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='name' type="text" {...register("name", { required: true })} />
 
                                                     <span className='text-xs ml-2'> Email <span className='text-red-600'>*</span></span>
-                                                    <input placeholder='Email' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='email' type="email" {...register("email", { required: true })} />
+                                                    <input defaultValue={''} placeholder='Email' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='email' type="email" {...register("email", { required: true })} />
 
                                                     <span className='text-xs ml-2'> Phone <span className='text-red-600'>*</span></span>
-                                                    <input placeholder='Phone' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='phone' type="text" {...register("phone", { required: true })} />
+                                                    <input defaultValue={''} placeholder='Phone' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='phone' type="text" {...register("phone", { required: true })} />
 
-                                                    <span className='text-xs ml-2'> About <span className='text-red-600'>*</span></span>
+                                                    <span defaultValue={''} className='text-xs ml-2'> About <span className='text-red-600'>*</span></span>
                                                     <textarea placeholder='About' rows={5} className='border-2 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='about' type="text" {...register("about", { required: true })} />
 
-                                                    <span className='text-xs ml-2'> Special At <span className='text-red-600'>*</span></span>
+                                                    <span defaultValue={''} className='text-xs ml-2'> Special At <span className='text-red-600'>*</span></span>
                                                     <input placeholder='Spacial At (Subject)' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='spacial_at' type="text"  {...register("spacial_at", { required: true })} />
 
                                                     <span className='text-xs ml-2'> Gander <span className='text-red-600'>*</span></span>
@@ -74,12 +87,23 @@ export default function AddTeacherPopup({ AddTeacherPopupIsOpen, setAddTeacherPo
 
                                                     <span className='text-xs ml-2'> Date Of Birth <span className='text-red-600'>*</span></span>
                                                     <input placeholder='Date Of Birth' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='date_of_birth' type="date" defaultValue="1999-01-01" {...register("date_of_birth", { required: true })} />
+
+
+                                                    <span className='text-xs ml-2'> Password <span className='text-red-600'>*</span></span>
+                                                    <input placeholder='Password' className='border-2 h-10 px-3 border-gray-200 rounded-lg mb-2 w-full bg-gray-100' name='password' type="password"  {...register("password", { required: true })} />
                                                 </div>
+
+                                                {(error.length > 0) && (<div className='mt-5 rounded-lg w-full px-5 py-2 bg-red-300 text-red-600 text-center'> {error} </div>)}
+
                                             </div>
+
                                         </div>
                                     </div>
                                     <div className="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+
                                         <input
+
+                                            id='submit'
                                             value={'Submit'}
                                             type="submit"
                                             className="w-full items-center inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm"

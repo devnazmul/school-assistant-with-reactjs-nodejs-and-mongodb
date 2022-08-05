@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function TeacherCard({name,spacial_at,teacher_pic_url}) {
+export default function TeacherCard({ name, spacial_at, teacher_pic_url, _id }) {
   return (
     <div className="bg-white shadow-lg py-4 px-3 rounded-lg flex md:flex-row flex-col justify-between items-center">
       <div className='relative'>

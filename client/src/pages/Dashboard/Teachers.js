@@ -2,11 +2,11 @@ import React from 'react'
 import { BsSearch } from 'react-icons/bs'
 import { IoPersonAdd } from 'react-icons/io5'
 import AddTeacherPopup from '../../components/AddTeacherPopup'
-import SingleDetails from '../../components/SingleDetails'
 import TeachersList from '../../components/TeachersList'
 
 export default function Teachers() {
   const [AddTeacherPopupIsOpen, setAddTeacherPopupIsOpen] = React.useState(false)
+  const [monitoringChanges, setMonitoringChanges] = React.useState(false)
 
   return (
     <div className='flex relative'>
@@ -25,9 +25,9 @@ export default function Teachers() {
           </div>
         </div>
         <div className='flex justify-between'>
-          <AddTeacherPopup setAddTeacherPopupIsOpen={setAddTeacherPopupIsOpen} AddTeacherPopupIsOpen={AddTeacherPopupIsOpen} />
-          <TeachersList />
-          <SingleDetails />
+          <AddTeacherPopup monitoringChanges={monitoringChanges} setMonitoringChanges={setMonitoringChanges} setAddTeacherPopupIsOpen={setAddTeacherPopupIsOpen} AddTeacherPopupIsOpen={AddTeacherPopupIsOpen} />
+          <TeachersList monitoringChanges={monitoringChanges} />
+          {/* <SingleDetails /> */}
         </div>
       </div>
     </div>

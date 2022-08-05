@@ -1,22 +1,42 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 export default function AuthenticationForms() {
-
+  const location = useLocation()
   const [stage, setStage] = React.useState('login')
 
 
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+
   console.log(errors);
 
-
   const [user, setUser] = React.useState();
+
   React.useEffect(() => {
     localStorage.setItem('user_info', JSON.stringify(user));
   }, [user]);
+
+
+
+  const handleLogin = (data) => {
+  console.log(data);
+    
+  }
+  const handleRegistration = (data) => {
+    console.log(data);
+
+  }
+
+
+  if (user) {
+    location.push('/')
+  }
+
+
+
+
 
   return (
     <div className='w-full flex justify-center items-center h-screen bg-gradient-to-tl from-grad-from to-grad-to'>
@@ -24,16 +44,16 @@ export default function AuthenticationForms() {
         <div className='md:w-8/12 lg:w-7/12 xl:w-1/2 md:px-5 relative px-10   py-10 rounded-xl shadow-xl bg-white'>
           <img className='absolute  w-1/2 md:w-1/3 -top-20 -right-20' src="./assets/school-boy-3d.png" alt="" />
 
-          <form className='flex justify-center items-center flex-col' onSubmit={handleSubmit(onSubmit)}>
+          <form className='flex justify-center items-center flex-col' onSubmit={handleSubmit(handleLogin)}>
             <h1 className='text-3xl font-bold text-grad-to mb-5'>Log in</h1>
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md focus:outline-none shadow-xl bg-purple-100'
               type="text"
               placeholder="Email"
               {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
             />
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md focus:outline-none shadow-xl bg-purple-100'
               type="password"
               placeholder="password"
               {...register("password", { required: true, maxLength: 12 })}
@@ -57,29 +77,29 @@ export default function AuthenticationForms() {
           <img className='absolute   w-1/2 md:w-1/3  -top-10 md:-top-20 -right-20 md:-right-24' src="./assets/school-boy-3d.png" alt="" />
 
 
-          <form className='flex justify-center items-center flex-col' onSubmit={handleSubmit(onSubmit)}>
+          <form className='flex justify-center items-center flex-col' onSubmit={handleSubmit(handleRegistration)}>
             <h1 className='text-3xl font-bold text-grad-to mb-5'>Sign Up</h1>
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2 focus:outline-none   mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
               type="text" defaultValue={''}
               placeholder="full name"
               {...register("full_name", { required: true, pattern: /^\S+@\S+$/i })}
             />
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2  focus:outline-none  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
               type="text" defaultValue={''}
               placeholder="username"
               {...register("username", { required: true, maxLength: 12 })}
             />
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2 focus:outline-none  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
               type="email"
               defaultValue={''}
               placeholder="email"
               {...register("email", { required: true, maxLength: 12 })}
             />
             <input
-              className='w-full md:w-1/2  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
+              className='w-full md:w-1/2 focus:outline-none  mb-5 h-10 px-5 rounded-md  shadow-xl bg-purple-100'
               type="password"
               defaultValue={''}
               placeholder="password"

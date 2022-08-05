@@ -50,7 +50,7 @@ export default function FinanceChart({ isLoading, data }) {
                             <Area activeDot={{ r: 9 }} type={'monotone'} stackId="1" dataKey="expance" strokeWidth={5} stroke="#F49121FF" fill="transparent" />
                         </AreaChart>
                     </ResponsiveContainer>
-                    {console.log(data)}
+                    {/* {console.log(data)} */}
                 </div>
             ) : (
                 <div>

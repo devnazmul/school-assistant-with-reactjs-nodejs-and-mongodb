@@ -58,7 +58,7 @@ export default function SchoolPerformanceChart({ isLoading, data }) {
                             <Area activeDot={{r:9}} type={'monotone'} stackId="1" dataKey="teachers" strokeWidth={5} stroke='#32B899FF' fill="url(#colorTeachers)" />
                         </AreaChart>
                     </ResponsiveContainer>
-                    {console.log(data)}
+                    {/* {console.log(data)} */}
                 </div>
             ) : (
                 <div>

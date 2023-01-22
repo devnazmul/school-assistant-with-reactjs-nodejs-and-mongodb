@@ -5,7 +5,7 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 ## Live Link🔗
-https://school-assistant-with-nextjs-nodejs-and-mongodb.vercel.app/
+https://school-assistantant-bt02j2on7-devnazmul.vercel.app/
 
 ## Tech⚙️
 - [React Js](https://reactjs.org/)
